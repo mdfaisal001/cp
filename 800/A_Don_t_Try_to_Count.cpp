@@ -16,24 +16,25 @@ int main()
         string temp = n;
         if (n.find(x) != string::npos)
         {
-            cout << 1 << endl; // Minimum one repetition required
+            cout << 0 << endl;
             continue;
         }
-        int count = 1;
+        int count = 0;
         for (int i = 0; i < parent * child; i++)
         {
-            temp += n;
-            count++;
+
             if (temp.find(x) != string::npos)
             {
                 cout << count << endl;
                 break;
             }
+            temp += n;
+            count++;
         }
         if (temp.find(x) == string::npos)
         {
             cout << -1 << endl; // If we never find x in the repeated n
         }
+        return 0;
     }
-    return 0;
 }
